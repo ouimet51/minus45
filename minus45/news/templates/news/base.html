@@ -1,0 +1,65 @@
+
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/darkly/bootstrap.min.css">
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'news/style.css' %}?{% now "U" %}">
+
+    </head>
+    <body>
+
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <button type="button " id="sidebarCollapse" class="btn btn-secondary">
+                <i class="fas fa-align-left"></i>
+                <span>Sources</span>
+            </button>
+            <a class="navbar-brand  mx-auto"  href="/news">Minus45</a>
+            <button type="button" class="btn btn-outline-danger bullshit">No Bullshit Button</button>
+
+        </nav>
+
+        <div class="wrapper">
+            <nav id="remove">
+                <div class="sidebar-header">
+
+                </div>
+
+                <ul class="list-unstyled components">
+
+                    <li class="active">
+                        <h3>
+                            <a href="/news" data-toggle="collapse" aria-expanded="false">Top News</a>
+                        </h3>
+                    </li>
+                    <li class="active">
+                        <h3>
+                            <a href="/news/hacker" data-toggle="collapse" aria-expanded="false">Hacker News</a>
+                        </h3>
+                    </li>
+                    <li class="active">
+                        <h3>
+                            <a href="/news/nytbiz" data-toggle="collapse" aria-expanded="false">NYT Business</a>
+                        </h3>
+                    </li>
+
+
+                </ul>
+
+            </nav>
+            <div class="container">
+                <div class="row article-row">
+    {% block content %}
+    {% endblock %}
+                </div>
+            </div>
+        </div>
+        <script src="{% static "news/news.js" %}"></script>
+    </body>
+
+</html>

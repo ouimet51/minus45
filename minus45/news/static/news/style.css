@@ -1,0 +1,35 @@
+
+nav {
+    margin-bottom: 50px;
+}
+
+
+a{
+    color:white;
+}
+a:hover{
+    color:#F8DEFD;
+}
+
+img{
+    margin-bottom:20px;
+
+}
+.wrapper{
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+#sidebar {
+    border-right: 1px solid white;
+    margin-top:-100px;
+    padding-top:100px;
+    text-align:center;
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 100vh;
+}
+
+#remove {
+    margin-left: -250px;
+}

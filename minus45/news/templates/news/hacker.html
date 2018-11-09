@@ -1,0 +1,27 @@
+{% extends 'news/base.html' %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+
+
+{% if articles %}
+    {% for article in articles %}
+
+    <div class="col-lg-4 article">
+    <!-- <img class="img-fluid" src="{{ article.urlToImage }}"> -->
+    <h4><a class="font-weight-bold"href="{{ article.url }}">{{ article.title }}</a></h4>
+    <!-- <p class="font-italic">{{ article.author }}</p> -->
+    <p class="text-justify font-weight-light">{{ article.description }}</p>
+    <br/>
+    </div>
+
+    {% endfor %}
+
+{% else %}
+<p>No Headlines Found</p>
+{% endif %}
+    </div>
+</div>
+
+{% endblock %}

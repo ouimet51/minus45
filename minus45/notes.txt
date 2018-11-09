@@ -1,0 +1,27 @@
+news api key = fd46bc918f8641fc91edfdce37455ee8
+
+Top Headlines!
+https://newsapi.org/v2/top-headlines?country=us&apiKey=fd46bc918f8641fc91edfdce37455ee8
+
+Features
+1. Get the trump outta here
+   when building this is imporant becaus
+   it will make us think of how we can easily add this in to
+   all different sections of the site. So we need to build
+   it scalable.
+
+
+Next Steps
+1. See how to implement service files in django, maybe we can build all of our
+logic 
+2.Need to build my own replica of the new data format so I can manipulate
+the data as I see fit, it might be best to start using classes?
+3. What are some classes that can be used? Maybe each attribute will have it's own class?
+4. If we make a class called 'article' what should it return? Probably something that can
+be iterated on in a dictionary... the final dictionary we pass along to the template lang is
+v-important... then we will need to learn what we are doing with JS?
+5. Look in to what celery is.
+
+ Dealing with broken images.
+
+Ideally,your views should not contain anything other than presentation logic.
