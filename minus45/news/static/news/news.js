@@ -53,13 +53,25 @@ articles_array.sort(function(a,b){
 /**
  * For each element in the array
  * If there is no image, remove the broken url
+ * If there is no author or desc remove those as well.
  * and add each item of the previously ordered list
  * to it's parent element
  */
 articles_array.forEach(element=>{
+        console.log(element);
         var img_element = element.querySelector('img');
         if(img_element.getAttribute('src') == 'None'){
-        img_element.remove();
-    }
+            img_element.remove();
+        }
+        // Will need to create a list of all P elements
+        // and go through each of them
+        var text_elements = element.querySelectorAll('p')
+        text_elements.forEach(text=>{
+            if (text.innerHTML == 'None'){
+                text.remove()
+            }
+        })
+
+
     article_container.append(element);
 });

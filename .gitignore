@@ -1,0 +1,56 @@
+*.pyc
+*~
+__pycache__
+.DS_Store
+dev_notes
+/static
+db.sqlite3
+
+
+# Virtualenv related
+bin/
+include/
+pip-selfcheck.json
+
+# Django related
+# src/minus45/settings/local.py
+# static-cdn/  # any collected static files
+
+# Django stuff:
+*.log
+local_settings.py
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
