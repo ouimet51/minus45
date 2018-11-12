@@ -20,5 +20,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('news/', include('news.urls')),
     path('news/hacker', include('news.urls')),
-    path('new/nytbiz', include('news.urls'))
+    path('news/nytbiz', include('news.urls')),
+    path('news/25iq', include('news.urls'))
 ]

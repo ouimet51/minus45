@@ -1,10 +1,14 @@
 import requests
 import json
+import feedparser
+import ssl
+import html
 
 
 HACKER_NEWS_URL = 'https://newsapi.org/v2/top-headlines?sources=hacker-news&apiKey=fd46bc918f8641fc91edfdce37455ee8&pageSize=12'
 TOP_HEADLINES_URL = 'https://newsapi.org/v2/top-headlines?country=us&apiKey=fd46bc918f8641fc91edfdce37455ee8&pageSize=12'
 NYT_BIZ_URL = 'https://api.nytimes.com/svc/topstories/v2/business.json?api-key=73bb4c440ded4fbfb6e423d6250873bb'
+IQ_FEED_URL = 'https://25iq.com/feed/'
 
 # data_model = {
 #     'articles': [
@@ -48,6 +52,33 @@ class Articles:
         return(main)
 
     @staticmethod
+    def fetch_iq():
+        data_model = {
+            'articles': [
+
+            ]
+        }
+
+        # I don't really know what this does but don't touch it.
+        if hasattr(ssl, '_create_unverified_context'):
+            ssl._create_default_https_context = ssl._create_unverified_context
+
+        iq_feed = feedparser.parse(IQ_FEED_URL)
+        print('Num Posts', len(iq_feed.entries))
+
+        for entry in iq_feed.entries:
+            article_dict = {}
+            article_dict['title'] = entry.title
+            # this is used to escape HTML entites.
+            article_dict['description'] = html.unescape(entry.description)
+            article_dict['url'] = entry.link
+
+            # article_dict['urlToImage'] = item['multimedia'][4]['url']
+
+            data_model['articles'].append(article_dict)
+        return data_model
+
+    @staticmethod
     def fetch_nyt_biz():
         data_model = {
             'articles': [
@@ -64,7 +95,8 @@ class Articles:
             article_dict['description'] = item['abstract']
             article_dict['url'] = item['url']
 
-            article_dict['urlToImage'] = item['multimedia'][4]['url']
+            # article_dict['urlToImage'] = item['multimedia'][4]['url']
 
             data_model['articles'].append(article_dict)
+
         return(data_model)
