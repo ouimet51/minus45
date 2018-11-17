@@ -36,6 +36,9 @@ var article_container = document.querySelector('.article-row')
  * will get pushed to the end of the array
  */
 articles_array.sort(function(a,b){
+    if (a.querySelector('img') == null){
+        return;
+    }
     const first = a.querySelector('img').getAttribute('src')
     const second = b.querySelector('img').getAttribute('src')
 
@@ -58,14 +61,15 @@ articles_array.sort(function(a,b){
  * to it's parent element
  */
 articles_array.forEach(element=>{
-        console.log(element);
         var img_element = element.querySelector('img');
-        if(img_element.getAttribute('src') == 'None'){
-            img_element.remove();
-        }
+        if (img_element != null && img_element.getAttribute('src') == 'None'){
+                img_element.remove();
+            }
+
         // Will need to create a list of all P elements
         // and go through each of them
         var text_elements = element.querySelectorAll('p')
+        // console.log(text_elements)
         text_elements.forEach(text=>{
             if (text.innerHTML == 'None'){
                 text.remove()

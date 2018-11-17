@@ -1,6 +1,7 @@
 certifi==2018.8.24
 chardet==3.0.4
 Django==2.1.2
+feedparser==5.2.1
 idna==2.5
 newsapi-python==0.2.3
 pytz==2018.5
